@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 //import com.thoughtworks.selenium.Selenium;
-
+//testing git setup for mac
 public class Simulator_Android_Chrome_TC_001 {
 
 	public static void main(String[] args) throws InterruptedException, MalformedURLException {
