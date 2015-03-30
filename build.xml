@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="posAppiumProject" default="" basedir=".">
+
+   <property name="sourceDir" locator="src"/>
+   <property name="buildDir" locator="bin"/>
+   <property name="libDir" locator="lib"/>
+   <property name="config" locator="config"/>
+   <property name="outputDir" locator="testsuite-output"/>
+   
+
+ <target name="makedir" description="Creates new output directories">
+    <mkdir dir="${"outputDir"}/>
+    </target>
+
+ <target name="clean" description="Remove build amd output directories">
+    <delete dir="${"outputDir"}/>
+   </target>
+</project>
