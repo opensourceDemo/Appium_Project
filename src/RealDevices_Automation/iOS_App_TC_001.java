@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 //import com.thoughtworks.selenium.Selenium;
-// checking git
+
 public class iOS_App_TC_001 {
 
 	public static void main(String[] args) throws InterruptedException, MalformedURLException {
