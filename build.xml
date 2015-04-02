@@ -4,7 +4,7 @@
     <property name="src.dir" value="src"/>
     <property name="build.dir" value="build"/>
     <property name="classes.dir" value="${build.dir}/classes"/>
-<property name="main-class" value="RealDevices_Automation"/>
+<property name="main-class" value="RD_Android_App_TC_001"/>
     <property name="lib.dir" value="libs"/>
     <property name="test.name" value="RD_Android_App_TC_001"/>
 
