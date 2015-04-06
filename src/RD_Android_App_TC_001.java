@@ -8,10 +8,11 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+@test
 public class RD_Android_App_TC_001 {
 
 
-	public static void main(String[] args) throws Exception
+//	public static void main(String[] args) throws Exception
 	 {
 	  
 		RemoteWebDriver driver;
@@ -50,3 +51,4 @@ public class RD_Android_App_TC_001 {
 
  
 }
+

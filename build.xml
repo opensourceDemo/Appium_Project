@@ -1,43 +1,59 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project name="pos" basedir="." default="main">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <property name="src.dir" value="src"/>
-    <property name="build.dir" value="build"/>
-    <property name="classes.dir" value="${build.dir}/classes"/>
-<property name="main-class" value="RD_Android_App_TC_001"/>
-    <property name="lib.dir" value="libs"/>
-    <property name="test.name" value="RD_Android_App_TC_001"/>
-
-    <path id="classpath">
-        <fileset dir="${lib.dir}" includes="**/*.jar"/>
-        <pathelement location="${classes.dir}" />
-    </path>
-
-    <target name="clean">
-        <delete dir="${build.dir}"/>
+<project name="posAppiumProject" default="" basedir=".">
+   <target name="makedir" description="Creates new output directories">
+    <mkdir dir="outputDir"/>
+    <echo>Created a directory </echo>
     </target>
 
-    <target name="compile">
-        <mkdir dir="${classes.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false" classpathref="classpath"/>
-    </target>
+ <target name="clean" description="Remove build amd output directories">
+    <delete dir="${outputDir}"/>
+    <echo>Deleted a directory </echo>
+   </target>
 
-    <target name="main" depends="clean,run"/>
+<!--@purpose:Declare a property set to be sent to java code via testing task -->
+<propertyset id="propset1">
+<propertyref name="browser"/>
+</propertyset>
 
-    <target name="run" depends="compile">
+<!--@ Purpose: Set browser value to IOS -->
+<target name ="set-browser-iOS">
+<property name="browser" value="iOS"/>
+</target>
 
-        <junit fork="yes" haltonfailure="yes">
+<!--@Purpose:Set browser value to Android -->
+<target name ="set-browser-android">
+<property name="browser" value="android"/>
+</target>
 
-            <test name="${test.name}"/>
+<target name="build" description="creates a build of the test suite.">
+<echo>"Doing build…."</echo>
+<javac srcdir="${sourceDir}" destdir="{buildDir}" classpathref="master-classpath" debug="true" deprecation="false" />
+</target>
 
-            <sysproperty key="browser.name" value="Chrome"/>
-            <sysproperty key="browser.platform" value="android"/>
-            <sysproperty key="browser.version" value=""/>
+<taskdef resource="testngtasks" classpath="${libDir}/testng-6.8.jar"/>
 
-            <formatter type="plain" usefile="false"/>
-            <classpath refid="classpath"/>
-        </junit>
+<target name="do-test-iOS" description="Execute TestNg tests on iOS">
+<testng classpathref="master-classpath" workingDir="${buildDir}" ouputdir="${outputDir}" suitename="testNG">
 
-    </target>
+<!--refer the property set to java code to pass the value of browser property -->
+<propertyset refid="propset1"/>
 
+<xmlfileset dir="${testSuiteLocation}" includes="testNG.xml"/>
+</testng>
+</target>
+
+<target name="do-test-android" description="Execute TestNg tests on android">
+<testng classpathref="master-classpath" workingDir="${buildDir}" ouputdir="${outputDir}" suitename="pos-test-suite-android">
+<!--refer the property set to java code to pass the value of browser property -->
+<propertyset refid="propset1"/>
+<xmlfileset dir="${testSuiteLocation}" includes="testNG.xml"/>
+</testng>
+</target>
+
+<target name="run-test-iOS" depends="clean,build,set-browser-iOS,do-test-iOS">
+</target>
+
+<target name="run-test-android" depends="clean,build,set-browser-android,do-test-android">
+</target>
 </project>
