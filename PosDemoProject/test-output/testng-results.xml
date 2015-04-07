@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Sample Test Suite" duration-ms="99720" started-at="2015-04-07T09:31:18Z" finished-at="2015-04-07T09:32:58Z">
+    <groups>
+    </groups>
+    <test name="Sample Test" duration-ms="99720" started-at="2015-04-07T09:31:18Z" finished-at="2015-04-07T09:32:58Z">
+      <class name="com.pack.one.TestA">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.pack.one.TestA@44d3db51]" name="setUp" is-config="true" duration-ms="23819" started-at="2015-04-07T15:01:18Z" finished-at="2015-04-07T15:01:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testOne()[pri:0, instance:com.pack.one.TestA@44d3db51]" name="testOne" duration-ms="74140" started-at="2015-04-07T15:01:42Z" finished-at="2015-04-07T15:02:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOne -->
+        <test-method status="PASS" signature="testTwo()[pri:0, instance:com.pack.one.TestA@44d3db51]" name="testTwo" duration-ms="1" started-at="2015-04-07T15:02:56Z" finished-at="2015-04-07T15:02:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTwo -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.pack.one.TestA@44d3db51]" name="tearDown" is-config="true" duration-ms="1748" started-at="2015-04-07T15:02:56Z" finished-at="2015-04-07T15:02:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.pack.one.TestA -->
+    </test> <!-- Sample Test -->
+  </suite> <!-- Sample Test Suite -->
+</testng-results>
